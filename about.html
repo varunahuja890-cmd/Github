@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>About — A little sparkle</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    :root { color-scheme: dark; --ink:#f5f5ff; --muted:#a6abc7; }
+    * { box-sizing:border-box; }
+    body { min-height:100vh; margin:0; color:var(--ink); font-family:'DM Sans',sans-serif; background:radial-gradient(ellipse at 18% 20%,#282454 0,transparent 38%),radial-gradient(ellipse at 82% 78%,#183d53 0,transparent 40%),#0b1020; }
+    body::before { content:''; position:fixed; inset:0; pointer-events:none; opacity:.2; background-image:radial-gradient(#fff .7px,transparent .7px); background-size:28px 28px; mask-image:linear-gradient(transparent,black 25%,black 80%,transparent); }
+    main { min-height:100vh; display:grid; place-items:center; padding:100px 20px 40px; position:relative; }
+    .nav { position:absolute; top:24px; right:clamp(20px,5vw,64px); display:flex; gap:10px; }
+    .nav a { color:var(--muted); text-decoration:none; padding:9px 14px; border:1px solid rgba(255,255,255,.12); border-radius:999px; background:rgba(255,255,255,.04); font-size:13px; }
+    .nav a:hover,.nav a:focus-visible { color:var(--ink); border-color:rgba(255,255,255,.35); }
+    .card { width:min(100%,760px); padding:clamp(34px,7vw,72px); text-align:center; border:1px solid rgba(255,255,255,.13); border-radius:32px; background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025)); box-shadow:0 32px 100px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.12); backdrop-filter:blur(18px); animation:appear .8s cubic-bezier(.2,.8,.2,1) both; }
+    .eyebrow { display:inline-flex; padding:8px 13px; border:1px solid rgba(255,255,255,.14); border-radius:999px; color:#d9d7f4; font-size:12px; font-weight:600; letter-spacing:.13em; text-transform:uppercase; background:rgba(255,255,255,.045); }
+    h1 { margin:28px 0 17px; font:700 clamp(3rem,9vw,5.5rem)/1 'Space Grotesk',sans-serif; letter-spacing:-.07em; background:linear-gradient(100deg,#fff 12%,#e2d7ff 55%,#ff9dcc 88%); color:transparent; background-clip:text; }
+    .lead { max-width:540px; margin:0 auto; color:var(--muted); font-size:clamp(1rem,2.5vw,1.15rem); line-height:1.8; }
+    .links { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:34px; }
+    .links a { color:#17132b; background:linear-gradient(105deg,#ffe08a,#ff9fc9 55%,#c1a7ff); text-decoration:none; font-weight:700; font-size:14px; padding:14px 20px; border-radius:999px; transition:transform .2s; }
+    .links a:hover { transform:translateY(-3px); }
+    .links a:focus-visible { outline:3px solid white; outline-offset:4px; }
+    @keyframes appear { from { opacity:0; transform:translateY(22px) scale(.98); } to { opacity:1; transform:none; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="contact.html">Contact</a></nav>
+    <section class="card" aria-labelledby="about-title">
+      <div class="eyebrow">A little about this place</div>
+      <h1 id="about-title">About</h1>
+      <p class="lead">This is a small beginning built around curiosity, creativity, and the joy of making something new. Every good idea starts somewhere—thanks for stopping by to see this one take shape.</p>
+      <div class="links"><a href="contact.html">Get in touch</a><a href="index.html">Back home</a></div>
+    </section>
+  </main>
+</body>
+</html>
